@@ -45,3 +45,12 @@ html {
 a {
 	color: white;
 }
+
+li.clear {
+    clear: both;
+}
+
+img.logo {
+   width: 25%;
+   max-height: 25%;
+}
