@@ -33,7 +33,7 @@ and (orientation : landscape) {
 }
 
 html { 
-  background: url(background.jpg) no-repeat center center fixed; 
+  background: url(images/backgroundsmall.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -53,4 +53,8 @@ li.clear {
 img.logo {
    width: 25%;
    max-height: 25%;
+}
+#page-wrap {
+     width: 1024px;
+     margin: 0 auto;
 }
