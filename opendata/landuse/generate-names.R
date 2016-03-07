@@ -2,7 +2,7 @@ html <- list.files("/home/ht/Desktop/git/hansthompson.github.io/opendata/landuse
 
 links <- gsub(".html", "", html)
 
-href <- paste0("<h2>* <a href='http://akdata.org/opendata/landuse/", html,  "'>",
+href <- paste0("<h2> <a href='http://akdata.org/opendata/landuse/html/", gsub(" ", "%20", html),  "'>",
                links, "</a></h2>")
 
 
