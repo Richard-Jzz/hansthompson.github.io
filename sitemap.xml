@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>/2017/05/05/there-are-actually-very-few-public-realtime-gtfs-feeds/</loc>
+    <lastmod>2017-05-05T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2017-05-05T21:48:51-07:00</lastmod>
     <priority>0</priority>
@@ -31,10 +36,6 @@
   <url>
     <loc>/tags/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/1/01/01/there-are-actually-very-few-public-realtime-gtfs-feeds/</loc>
   </url>
   
 </urlset>
