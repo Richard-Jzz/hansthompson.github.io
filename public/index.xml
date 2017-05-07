@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A Hugo website</title>
+    <link>/</link>
+    <description>Recent content on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 May 2017 21:48:51 -0700</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Fri, 05 May 2017 21:48:51 -0700</pubDate>
+      
+      <guid>/about/</guid>
+      <description>My name is Hans, I live in Anchorage, AK. This might be my tenth-teenth attempt to maintain and keep a blog. This time it&amp;rsquo;s different! I swear on it baby!
+I set out at the begining of 2017 to keep one resolution and that was to take my interest in reading essays and try to write my own, 24 to be exact by the end of 2017.
+I use some code involved in the blog posts.</description>
+    </item>
+    
+    <item>
+      <title>An overview of public transit feeds around the world</title>
+      <link>/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/</link>
+      <pubDate>Fri, 05 May 2017 21:48:51 -0700</pubDate>
+      
+      <guid>/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/</guid>
+      <description>The gtfs[https://developers.google.com/transit/gtfs/] and gtfs-realtime[https://developers.google.com/transit/gtfs-realtime/] are the modern standards for sharing public transit scheduled data and current updates to routes. The embedded script will tell you what is currently publicly shared (transitfeeds.com) and what is currently being published to google.
+As of the writing of this script, there are 96 different realtime feeds from a handful of agencies around the world that publish an updated, and available publicly.</description>
+    </item>
+    
+  </channel>
+</rss>

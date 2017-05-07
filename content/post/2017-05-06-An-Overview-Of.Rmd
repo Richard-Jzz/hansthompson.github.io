@@ -1,0 +1,80 @@
+---
+title: "An overview of public transit feeds around the world"
+author: "Hans Thompson"
+date: "2017-05-05T21:48:51-07:00"
+output: html_document
+---
+
+The gtfs[https://developers.google.com/transit/gtfs/] and gtfs-realtime[https://developers.google.com/transit/gtfs-realtime/] are the modern standards for sharing public transit scheduled data and current updates to routes.  The embedded script will tell you what is currently publicly shared (transitfeeds.com) and what is currently being published to google.  
+
+As of the writing of this script, there are 96 different realtime feeds from a handful of agencies around the world that publish an updated, and available publicly.  A very small number compared to the 2017 (coincidentaly) static gtfs feeds that are published to google. That's a <5% coverage! 
+
+Five years ago, a group of civic hackers in Anchorage working with the muni IT department, helped People Mover, our bus agency, put the original feed together.  Not much fanfare was given, like much about public transit as a service generally.  I've very proud of this fact though.  And in the next couple years, myself and another hacker friend competed with each other to write a realtime feed to publish the current bus delays along routes with the XML feed for delays that already existed.  It took 10 months! but we finished the testing with Google and went live. 
+
+Now, with over a year in production, I would like to open source a delay calculator from any agency's gtfs feed and gps feed.  I believe if the delay calculator is working properly, then the only work that needs to happen to move from agency to agency is a custom function to move any gps feed to what I'm calling a "tidy" gps feed, which will integrate into the platform to calculate delays. A tidy gps feed is a row for every bus with lat, lon, route, direction, and timestamp. No unique identification for the bus is nesscary.  The row is enough. 
+
+Given I can make this work... I want to look at the available data.  
+
+Here's the public gtfs (blue) and gtfs realtime feeds (red) from transitfeeds.com, what I've found is the best maintained list of feeds.
+
+```{r, message = FALSE}
+library(jsonlite);library(dplyr);library(leaflet);library(ggplot2)
+y <- data.frame()
+for(i in 1:8) {
+  x <- fromJSON(paste0("https://api.transitfeeds.com/v1/getFeeds?key=dc00ee63-ab54-40e1-8a36-277caeae5fff&location=undefined&descendants=1&page=", i, "&limit=1000000"))
+  x <- data.frame(lat = x$results$feeds$l$lat, lon = x$results$feeds$l$lng, 
+                  type = x$results$feeds$ty, town = x$results$feeds$l$t,
+                  timestamp = as.POSIXct(x$results$feeds$latest$ts, origin="1970-01-01"))
+  y <- rbind(y, x)
+}
+y <- y %>% filter(type %in% c("gtfs", "gtfsrealtime"))
+
+
+leaflet() %>% addTiles() %>% 
+  addCircles(data= y %>% filter(type == "gtfs"), ~lon, ~lat, popup = ~town) %>%
+  addCircles(data= y %>% filter(type == "gtfsrealtime"), ~lon, ~lat, popup = ~town, color = "red")
+```
+
+Since points on a map aren't so greate at showing comparitive totals, here's a table summary. 
+
+```{r}
+ggplot(y %>%  group_by(type) %>% summarize(n = length(type))) + 
+  geom_bar(aes(x = type, y = n), stat = "identity")
+```
+
+Google lists out what static feeds they use, but do not provide the links to the gtfs for each agency.  They are world wide and you can see that some countries have made the transpoisiton of their feeds into gtfs a priority.  A very smart decicsion in my mind.  As of writing this, there isn't a complete overlap of transitfeeds by google (See southeast Alaska).
+
+```{r}
+m <- fromJSON("http://maps.google.com/landing/transit/assets/coverage.json")
+all_dat <- data.frame()
+for(i in c(1,2,3,4,6)){
+  n_j <- length(m$root$child$child[i][[1]]$name)
+  for(j in 1:n_j){
+    lat <- m$root$child$child[i][[1]]$child[[j]]$region_center$lat
+    lng <- m$root$child$child[i][[1]]$child[[j]]$region_center$lng
+    name <- m$root$child$child[i][[1]]$child[[j]]$name
+    country <- m$root$child$child[i][[1]]$name[j]
+    if(is.null(lat)) {country <- NULL}
+    dat <- data.frame(country, name, lng, lat)
+    all_dat <- rbind(all_dat, dat)
+  }
+}
+# north america has a special child layer for states/provinces. 
+for(i in 5){
+  n_j <- length(m$root$child$child[i][[1]]$name)
+  for(j in 1:n_j){
+    n_k <- length(m$root$child$child[i][[1]]$child[[j]]$name)
+    for(k in 1:n_k) {
+      lat <- m$root$child$child[i][[1]]$child[[j]]$child[[k]]$region_center$lat
+      lng <- m$root$child$child[i][[1]]$child[[j]]$child[[k]]$region_center$lng
+      name <- m$root$child$child[i][[1]]$child[[j]]$child[[k]]$name
+      country <- m$root$child$child[i][[1]]$child[[j]]$name[k]
+      if(is.null(lat)) {country <- NULL}
+      dat <- data.frame(country, name, lng, lat)
+      all_dat <- rbind(all_dat, dat)
+    }
+  }
+}
+leaflet() %>% addTiles() %>% 
+  addCircles(data= all_dat, ~lng, ~lat, popup = ~name)
+```

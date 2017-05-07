@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on A Hugo website</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 May 2017 21:48:51 -0700</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An overview of public transit feeds around the world</title>
+      <link>/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/</link>
+      <pubDate>Fri, 05 May 2017 21:48:51 -0700</pubDate>
+      
+      <guid>/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/</guid>
+      <description>The gtfs[https://developers.google.com/transit/gtfs/] and gtfs-realtime[https://developers.google.com/transit/gtfs-realtime/] are the modern standards for sharing public transit scheduled data and current updates to routes. The embedded script will tell you what is currently publicly shared (transitfeeds.com) and what is currently being published to google.
+As of the writing of this script, there are 96 different realtime feeds from a handful of agencies around the world that publish an updated, and available publicly.</description>
+    </item>
+    
+  </channel>
+</rss>
