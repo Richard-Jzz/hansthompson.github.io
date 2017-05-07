@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+<title>There are actually very few public, realtime gtfs feeds - A Hugo website</title>
+<meta property="og:title" content="There are actually very few public, realtime gtfs feeds - A Hugo website">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">There are actually very few public, realtime gtfs feeds</h1>
+
+    
+    <span class="article-date">0001/01/01</span>
+    
+
+    <div class="article-content">
+      <p>Using the script from an earlier post, (An overview of public transit feeds around the world)[<a href="http://akdata.org/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/" class="uri">http://akdata.org/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/</a>], I organized and cleaned up the public realtime feeds available at transitfeeds.com. The number I came up with in the earlier post for number of agency feeds is actually smaller! Many agencies have seperated their alert, positions, and trip update feeds. Wow, so it actually much smaller,</p>
+<pre class="r"><code>library(RCurl)
+# grab a csv online throgh https
+github_csv &lt;- getURL(&quot;https://raw.githubusercontent.com/hansthompson/transit-tracker/master/gtfs_realtime.csv&quot;)
+realtime_feeds &lt;- read.csv(text = github_csv)
+unique(as.character(realtime_feeds$town))</code></pre>
+<pre><code>##  [1] &quot;The Netherlands&quot;         &quot;Halifax, NS, Canada&quot;    
+##  [3] &quot;Mississauga, ON, Canada&quot; &quot;Luxembourg&quot;             
+##  [5] &quot;Daytona Beach, FL, USA&quot;  &quot;Madison, WI, USA&quot;       
+##  [7] &quot;Anchorage, AK, USA&quot;      &quot;Maryland, USA&quot;          
+##  [9] &quot;Austin, TX, USA&quot;         &quot;Columbus, OH, USA&quot;      
+## [11] &quot;Waterloo, ON, Canada&quot;    &quot;Orange County, CA, USA&quot; 
+## [13] &quot;Edmonton, AB, Canada&quot;    &quot;Cincinnati, OH, USA&quot;    
+## [15] &quot;Santa Monica, CA, USA&quot;   &quot;Connecticut, USA&quot;       
+## [17] &quot;Thunder Bay, ON, Canada&quot; &quot;Louisville, KY, USA&quot;    
+## [19] &quot;Nassau, NY, USA&quot;         &quot;Cairns QLD, Australia&quot;  
+## [21] &quot;San Francisco, CA, USA&quot;  &quot;Tampa, FL, USA&quot;         
+## [23] &quot;Virginia, USA&quot;           &quot;Boston, MA, USA&quot;</code></pre>
+<p>So there are only 24 towns that are publish an open feed! This is definitely something that needs to change!</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="../../../../js/math-code.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

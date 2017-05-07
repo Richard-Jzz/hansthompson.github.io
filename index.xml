@@ -32,5 +32,15 @@ I use some code involved in the blog posts.</description>
 As of the writing of this script, there are 96 different realtime feeds from a handful of agencies around the world that publish an updated, and available publicly.</description>
     </item>
     
+    <item>
+      <title>There are actually very few public, realtime gtfs feeds</title>
+      <link>/1/01/01/there-are-actually-very-few-public-realtime-gtfs-feeds/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/there-are-actually-very-few-public-realtime-gtfs-feeds/</guid>
+      <description>Using the script from an earlier post, (An overview of public transit feeds around the world)[http://akdata.org/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/], I organized and cleaned up the public realtime feeds available at transitfeeds.com. The number I came up with in the earlier post for number of agency feeds is actually smaller! Many agencies have seperated their alert, positions, and trip update feeds. Wow, so it actually much smaller,
+library(RCurl) # grab a csv online throgh https github_csv &amp;lt;- getURL(&amp;quot;https://raw.</description>
+    </item>
+    
   </channel>
 </rss>
