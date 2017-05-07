@@ -69,7 +69,7 @@
     
 
     <div class="article-content">
-      <p>Using the script from an earlier post, (An overview of public transit feeds around the world)[<a href="http://akdata.org/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/" class="uri">http://akdata.org/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/</a>], I organized and cleaned up the public realtime feeds available at transitfeeds.com. The number I came up with in the earlier post for number of agency feeds is actually smaller! Many agencies have seperated their alert, positions, and trip update feeds. Wow, so it actually much smaller,</p>
+      <p>Using the script from an earlier post, <a href="http://akdata.org/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/">An overview of public transit feeds around the world</a>, I organized and cleaned up the public realtime feeds available at transitfeeds.com. The number I came up with in the earlier post for number of agency feeds is actually smaller! Many agencies have seperated their alert, positions, and trip update feeds. Wow, so it actually much smaller,</p>
 <pre class="r"><code>library(RCurl)
 # grab a csv online throgh https
 github_csv &lt;- getURL(&quot;https://raw.githubusercontent.com/hansthompson/transit-tracker/master/gtfs_realtime.csv&quot;)

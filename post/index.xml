@@ -27,7 +27,7 @@ As of the writing of this script, there are 96 different realtime feeds from a h
       <pubDate>Fri, 05 May 2017 21:48:51 -0700</pubDate>
       
       <guid>/2017/05/05/there-are-actually-very-few-public-realtime-gtfs-feeds/</guid>
-      <description>Using the script from an earlier post, (An overview of public transit feeds around the world)[http://akdata.org/2017/05/05/an-overview-of-public-transit-feeds-around-the-world/], I organized and cleaned up the public realtime feeds available at transitfeeds.com. The number I came up with in the earlier post for number of agency feeds is actually smaller! Many agencies have seperated their alert, positions, and trip update feeds. Wow, so it actually much smaller,
+      <description>Using the script from an earlier post, An overview of public transit feeds around the world, I organized and cleaned up the public realtime feeds available at transitfeeds.com. The number I came up with in the earlier post for number of agency feeds is actually smaller! Many agencies have seperated their alert, positions, and trip update feeds. Wow, so it actually much smaller,
 library(RCurl) # grab a csv online throgh https github_csv &amp;lt;- getURL(&amp;quot;https://raw.</description>
     </item>
     
