@@ -1,5 +1,3 @@
-  GNU nano 2.5.3                File: tidy_gps_people_mover.R                                        
-
 tidy_gps_people_mover <- function() {
   xml_list <- xmlToList(xmlParse("http://bustracker.muni.org/InfoPoint/XML/vehiclelocation.xml"))
   list_length <- length(xml_list)
