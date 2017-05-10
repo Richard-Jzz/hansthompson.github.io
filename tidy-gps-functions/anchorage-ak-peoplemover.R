@@ -1,4 +1,4 @@
-tidy_gps_people_mover <- function() {
+get_tidy_gps <- function() {
   xml_list <- xmlToList(xmlParse("http://bustracker.muni.org/InfoPoint/XML/vehiclelocation.xml"))
   list_length <- length(xml_list) 
   bus_route <- c()
