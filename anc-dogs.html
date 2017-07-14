@@ -122,7 +122,7 @@ var size = 1000;
 var pack = d3.layout.pack()
     .sort(null)
     .size([size, size-100])
-    .value(function(d) { return d.Count_AnimalName * 10; })
+    .value(function(d) { return d.count * 10; })
     .padding(2);
 
 var svg = d3.select("#chart").append("svg")
@@ -131,16 +131,16 @@ var svg = d3.select("#chart").append("svg")
     .style("display", "block")
     .style("margin", "auto");
 
-d3.csv("https://raw.githubusercontent.com/hansthompson/hansthompson.github.io/master/dogNames2.csv", ready);
+d3.csv("https://data.muni.org/resource/r849-w2cw.csv?$order=name&$limit=5000", ready);
 
 function ready(error, data) {
 	if (error) throw error;
 	console.log(data);
 	data.forEach(function(d) {
-		d.Count_AnimalName = +d.Count_AnimalName;
+		d.count = +d.count;
 	});
 
-  	color.domain(d3.extent(data, function(d) { return d.Count_AnimalName; }));
+  	color.domain(d3.extent(data, function(d) { return d.count; }));
   	
   	var circles = svg.selectAll("circle")
 	    .data(pack.nodes({children: data}).slice(1))
@@ -149,9 +149,9 @@ function ready(error, data) {
 	    .attr("r", function(d) { return d.r; })
 	    .attr("cx", function(d) { return d.x; })
 	    .attr("cy", function(d) { return d.y; })
-	    .style("fill", function(d) { return color(d.Count_AnimalName); })
+	    .style("fill", function(d) { return color(d.count); })
 	    .on("mouseover", function(d){
-	    	d3.select("#text").html("<h2>" + d.Row_Labels + "</h2><br /><h4>" + d.Count_AnimalName + " dog names</h4>");
+	    	d3.select("#text").html("<h2>" + d.name + "</h2><br /><h4>" + d.count + " dog names</h4>");
       	})
       	.on("mouseout", function(d) {      
           	d3.select("#text").html("");
@@ -161,15 +161,15 @@ function ready(error, data) {
   	d3.select("#userInput").on("keyup", search);
 	function search(value, d) {
 		var input = this.value.toUpperCase();  
-		var name = d.Row_Labels;		
+		var name = d.name;		
 	    var name = input;	
 	    console.log(name);
 	    // get the count for user-input name	    
-	    var nameObj = data.filter(function(d) { return d.Row_Labels == input });
+	    var nameObj = data.filter(function(d) { return d.name == input });
 	    console.log(nameObj);
-	    var count = nameObj[0].Count_AnimalName;
+	    var count = nameObj[0].count;
 	    console.log(count);
-	    circles.classed("circle-hover", function(d) { return name == d.Row_Labels; });
+	    circles.classed("circle-hover", function(d) { return name == d.name; });
 	    var subtext = d3.select("#text").html("<h2>" + name + "</h2><br />");
 	    subtext.append("h4")
 	    	.text(name == "" ? "" : count + " dog names");
