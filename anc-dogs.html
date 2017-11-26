@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Anchorage Dog Names</title>
+		<meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=9" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+	</head>
+<style>
+body{
+	font-family: 'Comic Sans MS', sans-serif;
+	font-weight: 300;
+	overflow: none;
+	background-color: #ffffe0;
+}
+h1 {
+	font-weight: 700;
+}
+h4 {
+	margin-top: -23px;
+}
+#chart { 
+	height: 500px; 
+}
+#text {
+	position: absolute;
+	top: 200px;
+	right: 100px;
+}
+#title {
+	position: absolute;
+	top: 50px;
+	z-index: -10;
+}
+.title {
+	position: absolute;
+	top: 120px;
+	width: 20%;
+}
+.link {
+	line-height: 40px;
+}
+.link:hover {
+	color: white;
+}
+.circle {
+	opacity: 0.7;
+}
+.circle:hover {
+	fill: purple;
+    stroke: purple;
+    opacity: .75;
+    stroke-width: 7px;
+}
+.circle-hover {
+	fill: purple;
+    stroke: purple;
+    opacity: .75;
+    stroke-width: 7px;
+}
+
+</style>
+
+<body>
+<!-- DOHMH navbar -->		
+
+	<div class="container-fluid">
+	    <!-- Hamberger -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="http://www.nyc.gov/html/doh/html/home/home.shtml" target="_blank"></a>
+	    </div>
+
+	    <!-- Navbar menu items -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
+	      <ul class="nav navbar-nav navbar-right">	        
+		</ul>
+	    </div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">	
+	<div id="title">
+		<h1>Dog Names in Anchorage</h1>
+	</div>
+	<div class="title">
+		<p>Each bubble represents a dog name
+			by frequency of occurrence. <br />
+    	<input type="text" id="userInput" class="form-control" placeholder="Search Name">
+        <a class="link" href="http://a816-dohbesp.nyc.gov/IndicatorPublic/dognames/" >This project copied from the NYC project</a> <br />
+        <a class="link" href="https://data.muni.org/Other/Dog-Names/a9a7-y93v/" >Anchorage Open Data Portal</a> <br />
+        <a class="link" href="https://www.muni.org/Departments/health/Admin/animal_control/Pages/license.aspx" >Anchorage Online Dog Licencing</a> <br />
+
+	</div>
+
+	
+        
+
+	<div id = "chart">
+		<div id = "text"></div>
+	</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+
+<script>
+var color = d3.scale.linear().range(["#156b87","blue"]);
+var size = 1000;
+
+var pack = d3.layout.pack()
+    .sort(null)
+    .size([size, size-100])
+    .value(function(d) { return d.count * 10; })
+    .padding(2);
+
+var svg = d3.select("#chart").append("svg")
+    .attr("width", size)
+    .attr("height", size)
+    .style("display", "block")
+    .style("margin", "auto");
+
+d3.csv("https://data.muni.org/resource/r849-w2cw.csv?$order=name&$limit=5000", ready);
+
+function ready(error, data) {
+	if (error) throw error;
+	console.log(data);
+	data.forEach(function(d) {
+		d.count = +d.count;
+	});
+
+  	color.domain(d3.extent(data, function(d) { return d.count; }));
+  	
+  	var circles = svg.selectAll("circle")
+	    .data(pack.nodes({children: data}).slice(1))
+	    .enter().append("circle")
+	    .attr("class", "circle")
+	    .attr("r", function(d) { return d.r; })
+	    .attr("cx", function(d) { return d.x; })
+	    .attr("cy", function(d) { return d.y; })
+	    .style("fill", function(d) { return color(d.count); })
+	    .on("mouseover", function(d){
+	    	d3.select("#text").html("<h2>" + d.name + "</h2><br /><h4>" + d.count + " dog names</h4>");
+      	})
+      	.on("mouseout", function(d) {      
+          	d3.select("#text").html("");
+        });
+ 
+	// search
+  	d3.select("#userInput").on("keyup", search);
+	function search(value, d) {
+		var input = this.value.toUpperCase();  
+		var name = d.name;		
+	    var name = input;	
+	    console.log(name);
+	    // get the count for user-input name	    
+	    var nameObj = data.filter(function(d) { return d.name == input });
+	    console.log(nameObj);
+	    var count = nameObj[0].count;
+	    console.log(count);
+	    circles.classed("circle-hover", function(d) { return name == d.name; });
+	    var subtext = d3.select("#text").html("<h2>" + name + "</h2><br />");
+	    subtext.append("h4")
+	    	.text(name == "" ? "" : count + " dog names");
+	};
+
+	function unsearch(d) {
+    	circles.classed("circle-hover", false);
+    	d3.select("#text").html("");
+  	};
+
+};
+
+d3.select(self.frameElement).style("height", size + "px");
+
+</script>
+
+
+</body>
