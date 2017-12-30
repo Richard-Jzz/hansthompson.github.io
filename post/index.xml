@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Northern Signals</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 May 2017 21:48:51 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 30 Dec 2017 21:48:51 -0700</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Five New Technologies I Used And Liked In 2018</title>
+      <link>/2017/12/30/five-new-technologies-i-used-and-liked-in-2018/</link>
+      <pubDate>Sat, 30 Dec 2017 21:48:51 -0700</pubDate>
+      
+      <guid>/2017/12/30/five-new-technologies-i-used-and-liked-in-2018/</guid>
+      <description>1. Pi-Hole This is my top pick for 2018 for very practical reasons. The Pi-Hole project identifies the domain names of ads from your DNS requests and points them to an un recoverable ip (a black hole). This allows you to have the best ad free experience online available without any configuration of the devices on your local network besides adding it as your own DNS service on the router. There are still ads on domains that serve their own ads (google, facebook, etc.</description>
+    </item>
     
     <item>
       <title>An overview of public transit feeds around the world</title>
