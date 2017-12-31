@@ -6,10 +6,19 @@
     <description>Recent content on Northern Signals</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Dec 2017 21:48:51 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 31 Dec 2017 21:48:51 -0700</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Transitioning to software development in 2018</title>
+      <link>/2017/12/31/transitioning-to-software-development-in-2018/</link>
+      <pubDate>Sun, 31 Dec 2017 21:48:51 -0700</pubDate>
+      
+      <guid>/2017/12/31/transitioning-to-software-development-in-2018/</guid>
+      <description>In spring 2011, I joined the Alaska Fish and Game genetics lab as Fisheries Biologist. A big accomplishment for me given it was my first year out of college and Alaska has a limited job market for professional state biologists. The lab was everything I wanted in a workplace, some respect, some fun and impactful science. On my first day on the job I met the lead biometrician in the break room at lunch and he pressed me on what math I knew.</description>
+    </item>
     
     <item>
       <title>Five New Technologies I Used And Liked In 2018</title>
