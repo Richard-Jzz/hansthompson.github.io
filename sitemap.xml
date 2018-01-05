@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2018/01/04/my-problem-with-how-an-expensive-mistake-created-an-opening-to-merge-anchorage-utilities/</loc>
+    <lastmod>2018-01-04T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/12/31/transitioning-to-software-development-in-2018/</loc>
     <lastmod>2017-12-31T21:48:51-07:00</lastmod>
   </url>
@@ -33,13 +38,13 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-12-31T21:48:51-07:00</lastmod>
+    <lastmod>2018-01-04T21:48:51-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2017-12-31T21:48:51-07:00</lastmod>
+    <lastmod>2018-01-04T21:48:51-07:00</lastmod>
     <priority>0</priority>
   </url>
   
