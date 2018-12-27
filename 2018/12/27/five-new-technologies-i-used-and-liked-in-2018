@@ -1,1 +1,192 @@
 
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+<title>Five New Technologies I Used And Liked In 2018 - Northern Signals</title>
+<meta property="og:title" content="Five New Technologies I Used And Liked In 2018 - Northern Signals">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/hansthompson">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/datamanak">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">5 min read</span>
+    
+
+    <h1 class="article-title">Five New Technologies I Used And Liked In 2018</h1>
+
+    
+    <span class="article-date">2018/12/27</span>
+    
+
+    <div class="article-content">
+
+Last year I had the idea that I would list the innovations that made my life better.  By reflecting back on the year even if they weren't groundbreakingly new, I think that it might help other people that are rightly skeptical about adding the complexity of new things into their life.
+
+
+      <div id="Jawsaw" class="section level3">
+<h3>1. <a href="https://www.amazon.com/d/Chainsaws/Worx-WG320-PowerShare-Cordless-Auto-Tension/B00CF7J4OY/">Jawsaw</a></h3>
+
+I think I first saw this over a decade ago on a cable television ad.  The kind of ad that would repeat ad nauseum like the Shamwow or the Snuggie. So I had some pretty strong skepticism of this to begin with.  But after last year's tool addition of the electric chainsaw surprisingly impressing me, I figured this might be worth a shot for helping with a particular application.  
+
+<p>This summer I advocated strongly for treating and removing the european bird cherry on Chester creek greenbelt. It's an invasive species and has overgrown the area.  What I needed was a tool better than a chainsaw at cutting down these trees.  And the Jawsaw worked very well.  With most of the trees I needed to target within the 4" diameter of the mouth of the jawsaw, the bird cherry being a medium-soft wood, and having so many trees to cut, this tool did a great job.  
+
+<p>The two major advantages of using the jawsaw over a conventional bladed chainsaw is improved safety and the stability of the cut.   The mouth of the Jawsaw eliminates the concern for kickback and also holds the tree in place while keeping the rotating blade from going on a changing angle through the cut. The mouth of the chainsaw also allow for cutting on the ground.  The blade is recessed from front of the mouth just enough to allow for smaller cords to be cut from the downed tree in a quick fashion.
+
+<p>And just like the battery powered chainsaw I reviewed last year, you can get a great amount of work done with a small battery.
+
+</div>
+
+<div id="Motion-sensing" class="section level3">
+<h3>2. <a href="https://www.amazon.com/BAXIA-TECHNOLOGY-Wireless-Waterproof-Security/dp/B071HW515B/">Motion-sensing solar flood lights</a></h3>
+
+
+This one is really the combination of four components that come together better and cheaper than you would expect.  A small solar panel, a small lithium battery, a passive infrared (PIR) motion sensor and board, and an LED flood light.  This could scale from a small garden light to a security flood light.  The way I use the ones linked above to act as a light along the side of my garage when I'm getting to and from my car in the winter.  The device can tell that it's dark out by the low wattage from the solar panel and can sense that there is motion with a PIR that uses very little energy.  When both of these conditions are triggered, the LED turns on for a set amount of time based on the PIR board.  These two conditions conserve when the light turns on, meaning even in the Anchorage winter, there is enough charge to keep it operational through the whole winter.  This is with only a small daily solar charging.
+
+<p>The linked product is on discount of $28.50.  The parts are very cheap and could be gotten even cheaper through a direct chinese distributor like through Alibaba. The prices vary but are arguably very economical and modular to how you would like them.
+
+<p>There is a growing and reasonable concern of light pollution with the over-use of LED lights.  I think this is something to think about and we'll see in time how LED's are engineered to avoid this problem.
+
+</div>
+
+
+<div id="Nord" class="section level3">
+<h3>3. <a href="https://www.youtube.com/watch?v=aJSCC54wVcg">NordVPN Obfuscated Servers</a></h3>
+
+
+Virtual Private Networks have been used for awhile and aren't new.  The reason NordVPN is a next level technology is their option for a "Obfuscated Connection", which means Nord will route and split your communication through several different VPN servers simultaneously. Considering a regular VPN will hide your traffic already why then would you need to use an obfuscated connection?
+
+<p>This last month I had traveled for business and vacation through mainland China.  The whole of the public internet is blocked on the China's network however, business communications need to continue to the outside world, so there are some connections that the government allows.  The Chinese ISP seems to take down different VPN servers down arbitrary though. But when you use an obfuscated connection, you still can receive and send traffic because you are also connected to several other servers at the same time, instead of relying on one server.   
+
+
+</div>
+<div id="motionEyeOs" class="section level3">
+<h3>4.  <a href="https://github.com/ccrisan/motioneyeos/wiki/Features">motionEyeOs</a>)</h3>
+
+
+MotionEyeOs is a linux distro for any of the Raspberry Pi's that let you set up a remote camera that will store images or video locally or push the files on a schedule to another data store, like through FTP or to your google drive.  The community is pretty strong and can help with troubleshooting issues and there are tutorials for just about everything you want.
+
+<p>Using the motionEyeOs distro on a pi over an existing video security system gives five advantages.  First, it's cheaper.  Secondly, If your pi has a wifi chip, you don't need to wire your system up to a central recording device or computer.  Third is the fact it scheduled data dumps to the cloud including google drive all through the config screen.  Fourth, It is scalable to the upload limit of your network to the cloud. And fifth, it's all open source and being improved for free regularly.
+
+</div>
+
+<div id="GEDmatch" class="section level3">
+
+<h3>5. <a href="https://www.gedmatch.com/login1.php">GEDmatch.com</a></h3>
+
+
+GEDmatch.com is a website for calculating racial ancestry and finding relatives based on commercially available DNA fingerprinting tests from companys like Ancestry.com and 23andme.com.  The website has been around a long time but only really became known to the general public this year when it was released that the FBI had uploaded a DNA sample from the suspect of a cold case murder and successfully apprehended the suspect.  The website used an algorithm to quantify the similarities in DNA with members that have uploaded their data and the FBI found what the website classified as a second cousin.  They then found the second cousin and were able to identify the sole second cousin who was in the Sacramento area at the time.  
+
+<p>To me, this system of catching suspects should be leveraged as far as possible.  We should be doing this for every sample of DNA and we should be encouraging and incentivising the public to get this DNA screening done, retain their ownership of the data, but also make it available for law enforcement to screen while providing a way to contact the owner of the data without knowing who they are without their consent. Only a small fraction of the population would need to have done this kind of DNA screening for the program to be successful since it would lead investigators directly to the crime scene suspect through help from the relative.  I think most people would not protect their relatives if investigators came with DNA evidence of a rape or murder.  
+
+<p>I'm still working out my thoughts on this and there is much more to learn and consider. 
+<a href="https://www.theatlantic.com/science/archive/2018/06/gedmatch-police-genealogy-database/561695/">Here is a good article if you want to learn more</a>.
+
+
+</div>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//akdata.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', '65234312', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+
